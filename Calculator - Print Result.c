@@ -27,3 +27,17 @@ do_print(int varnum, longint_t var) {
     */
     printf("\n");
 }
+
+/****************************************************************/
+
+/* Assign a longint value, could do this with just an assignment
+   statement, because structs can be assigned, but this is more
+   elegant, and only copies over the array elements (digits) that
+   are currently in use: var1 = var2.
+*/
+void
+do_assign(longint_t var1, longint_t var2) {
+    for (int i = 0; i <= INTSIZE; i++) {
+        var1[i] = var2[i];
+    }
+}
